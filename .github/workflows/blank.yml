@@ -21,11 +21,11 @@ jobs:
       uses: docker/login-action@v2.2.0
       with:
         registry: registry.cn-hangzhou.aliyuncs.com
-        username: 飞通1234
+        username: feitong1234
         password: 1qaz2wsx
         logout: false
 
     - name: Use Skopeo Tools Sync Image to Docker Hub
       run: |
-         skopeo copy docker://docker.io/library/nginx docker://registry.cn-hangzhou.aliyuncs.com/work-images/nginx
+         skopeo copy docker://hub.atomgit.com/library/hello-world:latest docker://registry.cn-hangzhou.aliyuncs.com/work-images/hello-world:latest
       # 使用 skopeo 工具将镜像同步到阿里云个人仓库中，使用时请自行源和目标修改仓库名称和镜像名称
